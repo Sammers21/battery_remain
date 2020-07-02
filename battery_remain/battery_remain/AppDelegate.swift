@@ -81,6 +81,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 result = String(toMatch[time])
             }
         }
+        if output.components(separatedBy: ";")[1] == " charged" {
+            result = "Charged"
+        }
         return result
     }
 }
