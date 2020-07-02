@@ -11,6 +11,8 @@
 		C2D53DCC24AD8DA900CC89D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D53DCB24AD8DA900CC89D3 /* Preview Assets.xcassets */; };
 		C2D53DCF24AD8DA900CC89D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D53DCD24AD8DA900CC89D3 /* Main.storyboard */; };
 		C2D53DE624AD97FC00CC89D3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D53DE524AD97FC00CC89D3 /* Media.xcassets */; };
+		C2D53DFC24ADA50D00CC89D3 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D53DFA24ADA50D00CC89D3 /* LaunchAtLogin.framework */; };
+		C2D53DFD24ADA50D00CC89D3 /* LaunchAtLogin.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = C2D53DFB24ADA50D00CC89D3 /* LaunchAtLogin.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		C2D53DD024AD8DA900CC89D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D53DD124AD8DA900CC89D3 /* battery_remain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = battery_remain.entitlements; sourceTree = "<group>"; };
 		C2D53DE524AD97FC00CC89D3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		C2D53DFA24ADA50D00CC89D3 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		C2D53DFB24ADA50D00CC89D3 /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D53DFC24ADA50D00CC89D3 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,8 @@
 		C2D53DB824AD8DA900CC89D3 = {
 			isa = PBXGroup;
 			children = (
+				C2D53DFA24ADA50D00CC89D3 /* LaunchAtLogin.framework */,
+				C2D53DFB24ADA50D00CC89D3 /* LaunchAtLogin.framework.dSYM */,
 				C2D53DC324AD8DA900CC89D3 /* battery_remain */,
 				C2D53DC224AD8DA900CC89D3 /* Products */,
 			);
@@ -81,6 +88,8 @@
 				C2D53DBD24AD8DA900CC89D3 /* Sources */,
 				C2D53DBE24AD8DA900CC89D3 /* Frameworks */,
 				C2D53DBF24AD8DA900CC89D3 /* Resources */,
+				C2D53DF824ADA43000CC89D3 /* Run Script */,
+				C2D53DFE24ADA58700CC89D3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D53DFD24ADA50D00CC89D3 /* LaunchAtLogin.framework.dSYM in Resources */,
 				C2D53DCF24AD8DA900CC89D3 /* Main.storyboard in Resources */,
 				C2D53DCC24AD8DA900CC89D3 /* Preview Assets.xcassets in Resources */,
 				C2D53DE624AD97FC00CC89D3 /* Media.xcassets in Resources */,
@@ -136,6 +146,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2D53DF824ADA43000CC89D3 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+		C2D53DFE24ADA58700CC89D3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/LaunchAtLogin.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LaunchAtLogin.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2D53DBD24AD8DA900CC89D3 /* Sources */ = {
@@ -282,6 +332,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"battery_remain/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = battery_remain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,6 +357,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"battery_remain/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = battery_remain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

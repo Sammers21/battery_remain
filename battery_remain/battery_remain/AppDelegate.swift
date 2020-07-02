@@ -23,6 +23,7 @@
 import Cocoa
 import SwiftUI
 import Foundation
+import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -52,12 +53,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func menu() {
         let menu = NSMenu()
+        let symb = LaunchAtLogin.isEnabled ? "✓ on" :"✗ off"
+        menu.addItem(NSMenuItem(title: "Run at startup: \(symb)", action: #selector(AppDelegate.toggleStartup(_:)), keyEquivalent: "q"))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         statusItem.menu = menu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    @objc func toggleStartup(_ sender: Any?){
+        LaunchAtLogin.isEnabled = !LaunchAtLogin.isEnabled
+        menu()
     }
     
     func remain() -> String {
