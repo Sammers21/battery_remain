@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func menu() {
         let menu = NSMenu()
         let symb = LaunchAtLogin.isEnabled ? "✓ on" :"✗ off"
-        menu.addItem(NSMenuItem(title: "Run at startup: \(symb)", action: #selector(AppDelegate.toggleStartup(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Run at startup: \(symb)", action: #selector(AppDelegate.toggleStartup(_:)), keyEquivalent: "t"))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         statusItem.menu = menu
     }
