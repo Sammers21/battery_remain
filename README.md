@@ -1,8 +1,8 @@
 <img src="https://user-images.githubusercontent.com/16746106/86316838-83941f80-bc36-11ea-9e6f-54dd40a1db5d.png" height="200" />
 
-# battery_remain
-
 [Download](https://github.com/Sammers21/battery_remain/releases/download/1.0/battery_remain.dmg)
+
+# battery_remain
 
 Mac OS app, which shows the remained battery time in the status bar. 
 
